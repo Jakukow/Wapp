@@ -37,13 +37,14 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .app-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 25vw;
-  height: 90%;
+  min-width: 25vw;
+  min-height: 49vw;
   background-color: white;
   border-radius: 2rem;
   box-shadow: 0.1px 0.1px 12px rgba(0, 0, 0, 0.329);
@@ -102,14 +103,15 @@ body {
 }
 /*Location container*/
 .location-coint {
-  margin-top: 1rem;
+  margin-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 2vw;
 }
 .location-name {
   margin-left: 1rem;
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: 300;
   letter-spacing: 0.2rem;
 }
@@ -130,6 +132,8 @@ body {
   font-size: 4vw;
   font-weight: 300;
   margin-left: 1vw;
+  text-align: center;
+  line-height: 100%;
 }
 /*nav-bar*/
 nav {
@@ -170,6 +174,9 @@ nav #marker {
   align-items: center;
   border: 0.1px rgba(0, 0, 0, 0.158) solid;
 }
+.date {
+  font-size: 1.2vw;
+}
 .small-date {
   font-size: 1.4vw;
 }
@@ -182,11 +189,104 @@ nav #marker {
   font-size: 1.4vw;
   margin-left: 0.4vw;
 }
+.location-sign {
+  height: 2.5vw;
+}
 .logo {
   padding-top: 1rem;
   width: 40%;
   align-self: center;
 }
+@media (max-width: 1200px) {
+  .app-container {
+    height: 80vh;
+    width: 45vw;
+    justify-content: flex-start;
+  }
+  .location-sign {
+    height: 3.5vh;
+  }
+  .location-name {
+    font-size: 5vw;
+  }
+  .date {
+    margin-top: 2vw;
+    font-size: 2vw;
+  }
+  .weather-icon {
+    width: 12vw;
+  }
+  .main-temp {
+    margin-top: 3vw;
+    font-size: 6vw;
+  }
+  .small-disp {
+    height: 45vw;
+    width: 42vw;
+  }
+  .small-disp-single {
+    height: fit-content;
+    width: 30vw;
+    justify-content: center;
+  }
+  .small-date {
+    font-size: 3vw;
+  }
+  .small-temp {
+    font-size: 3vw;
+  }
+  .small-we {
+    width: 5vw;
+  }
+  .search__field {
+    width: 30vw;
+  }
+}
+@media (max-width: 700px) {
+  .app-container {
+    height: 80vh;
+    width: 80vw;
+    justify-content: flex-start;
+  }
+  .location-sign {
+    height: 3.5vh;
+  }
+  .location-name {
+    font-size: 10vw;
+  }
+  .date {
+    font-size: 5vw;
+  }
+  .weather-icon {
+    width: 25vw;
+  }
+  .main-temp {
+    margin-top: 6vw;
+    font-size: 12vw;
+  }
+  .small-disp {
+    display: flex;
+
+    height: 40vw;
+    width: 70vw;
+  }
+  .small-disp-single {
+    width: 60vw;
+  }
+  .small-date {
+    font-size: 5vw;
+  }
+  .small-temp {
+    font-size: 5vw;
+  }
+  .small-we {
+    width: 10vw;
+  }
+  .search__field {
+    width: 35vw;
+  }
+}
+
 .hidden {
   opacity: 0;
 }

@@ -16,7 +16,7 @@ const item = document.querySelectorAll("nav a");
 const searchInput = document.querySelector(".search__field");
 const searchButton = document.querySelector(".search__btn");
 const futureDisplay = document.querySelector(".small-disp");
-
+document.querySelectorAll("*").forEach((x) => x.classList.remove("hidden"));
 function indicator(e) {
   marker.style.left = e.offsetLeft + "px";
   marker.style.width = e.offsetWidth + "px";
@@ -47,6 +47,7 @@ const getData = async function (url, options, key) {
     const result = await response.json();
     const todayDate = new Date().toJSON().slice(0, 14);
     assignData(result.forecast.items, todayDate, key);
+    document.querySelectorAll("*").forEach((x) => x.classList.remove("hidden"));
   } catch (error) {
     console.error(error);
   }
