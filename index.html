@@ -6,18 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <link rel="shortcut icon" href="Logo-1.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700;900&family=Poppins:wght@100;300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+    <script type="module" defer src="script.js"></script>
 
     <title>Weather - app</title>
   </head>
 
   <body>
     <div class="app-container">
-      <div class="logo">
-        <img src="app-logo.svg" />
+      <div class="location-coint">
+        <img src="location.svg" style="height: 2vw" />
+        <span class="location-name">LONDON</span>
       </div>
+      <div class="date">Saturday, 2 May</div>
+      <div class="today-disp">
+        <img class="weather-icon" src="sonnig.svg" />
+        <span class="main-temp">26°</span>
+      </div>
+
+      <nav>
+        <div id="marker"></div>
+        <a href="#">Today</a>
+        <a href="#">Weekly</a>
+      </nav>
+      <div class="small-disp">
+        <div class="small-disp-single">
+          <span class="small-date">9:00</span>
+          <img class="small-we" src="sonnig.svg" />
+          <span class="small-temp">26°</span>
+        </div>
+        <div class="small-disp-single">
+          <span class="small-date">9:00</span>
+          <img class="small-we" src="sonnig.svg" />
+          <span class="small-temp">26°</span>
+        </div>
+        <div class="small-disp-single">
+          <span class="small-date">9:00</span>
+          <img class="small-we" src="sonnig.svg" />
+          <span class="small-temp">26°</span>
+        </div>
+        <div class="small-disp-single">
+          <span class="small-date">9:00</span>
+          <img class="small-we" src="sonnig.svg" />
+          <span class="small-temp">26°</span>
+        </div>
+        <div class="small-disp-single">
+          <span class="small-date">9:00</span>
+          <img class="small-we" src="sonnig.svg" />
+          <span class="small-temp">26°</span>
+        </div>
+      </div>
+      <form class="search">
+        <input type="text" class="search__field" placeholder="Enter location" />
+        <button class="btn search__btn">
+          <svg class="search__icon">
+            <use class="shref" href="icons.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
     </div>
   </body>
 </html>
