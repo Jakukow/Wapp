@@ -16,7 +16,6 @@ const item = document.querySelectorAll("nav a");
 const searchInput = document.querySelector(".search__field");
 const searchButton = document.querySelector(".search__btn");
 const futureDisplay = document.querySelector(".small-disp");
-document.querySelectorAll("*").forEach((x) => x.classList.remove("hidden"));
 function indicator(e) {
   marker.style.left = e.offsetLeft + "px";
   marker.style.width = e.offsetWidth + "px";
@@ -49,7 +48,14 @@ const getData = async function (url, options, key) {
     assignData(result.forecast.items, todayDate, key);
     document.querySelectorAll("*").forEach((x) => x.classList.remove("hidden"));
   } catch (error) {
-    console.error(error);
+    console.log(error.message);
+    document.querySelector(".location-coint").classList.add("hidden");
+    document.querySelector(".date").classList.add("hidden");
+    document.querySelector(".weather-icon").classList.add("hidden");
+    document.querySelector(".d").classList.add("hidden");
+    document.querySelector(".small-disp").classList.add("hidden");
+    mainTemp.setAttribute("style", "white-space: pre;");
+    mainTemp.textContent = "Location\r\n not found!";
   }
 };
 const assignData = function (result, date, key) {
@@ -58,11 +64,11 @@ const assignData = function (result, date, key) {
   const weeklyForecast = [];
   const todayTemperature = dailyForecast.find((el) => el.date.includes(date));
 
-  let l = 0;
+  let l = 22;
   for (let step = 0; step < 7; step++) {
     ///?? jak zamienic fora
-    weeklyForecast.push(result[26 + l]);
-    l = l + 22;
+    weeklyForecast.push(result[0 + l]);
+    l = l + 24;
   }
   (Weather.temperature = todayTemperature), (Weather.location = key);
   Weather.dailyTemp = dailyForecast;
